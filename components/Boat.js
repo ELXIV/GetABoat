@@ -2,13 +2,14 @@ import {Text, View, Image, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome6';
 import React from "react";
 
-const Boat = ({name, description, icon_name, poster}) => {
+const Boat = ({name, description, icon_name, poster, price}) => {
     return(
         <View style={styles.boat} >
             <Text style={styles.heading}><Icon name={icon_name} size={30}/> {name}</Text>
             <Image style={styles.image} source={poster}/>
-            <Text style={styles.text}>{description}</Text>
-            <Text>{"\n"}</Text>
+            <Text style={styles.description}>{description}</Text>
+            <Text style={styles.price}>{price}</Text>
+
         </View>
     );
 };
@@ -21,7 +22,6 @@ const styles = StyleSheet.create({
         backgroundColor: "#0a4f83",
         alignSelf: "center",
         marginVertical: 10,
-
     },
 
     heading: {
@@ -31,17 +31,26 @@ const styles = StyleSheet.create({
         color: "white",
     },
 
-    text: {
-        color: "white",
-    },
-
     image: {
         height: 300,
         width: 350,
         borderColor: "#0e73bf",
         borderWidth: 2,
         alignSelf: 'center',
+    },
+
+    description: {
+        color: "white",
+    },
+
+    price: {
+        color: "white",
+        fontSize: 30,
+        fontWeight: "bold",
+        alignSelf: "center",
     }
+
+
 });
 
 export default Boat;
